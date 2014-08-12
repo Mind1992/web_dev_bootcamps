@@ -40,4 +40,11 @@ describe 'Bootcamp' do
     expect(Bootcamp.search_by_name('Epicodus')).to eq new_bootcamp.id
   end
 
+  it "lets you update bootcamps' name" do
+    new_bootcamp = Bootcamp.new({name: "Epicodus",length_id: 1})
+    new_bootcamp.save
+    new_bootcamp.update_name("Code Fellows", "Epicodus")
+    expect(Bootcamp.all.first.name).to eq "Code Fellows"
+  end
+
 end
