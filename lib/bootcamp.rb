@@ -45,7 +45,7 @@ class Bootcamp
 
    def delete_bootcamp(name)
     bootcamp = Bootcamp.search_by_name(name)
-    DB.exec("DElETE FROM bootcamps WHERE id = #{bootcamp};")
+    DB.exec("DELETE FROM bootcamps WHERE id = #{bootcamp};")
     Bootcamp.all.delete(Bootcamp.all.first)
   end
 

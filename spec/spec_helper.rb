@@ -12,6 +12,6 @@ RSpec.configure do |config|
     DB.exec('DELETE FROM bootcamps *')
     DB.exec('DELETE FROM technologies *')
     DB.exec('DELETE FROM curriculum *')
-    DB.exec('DELETE FROM lengths *')
+    DB.exec('DELETE FROM lengths')
   end
 end

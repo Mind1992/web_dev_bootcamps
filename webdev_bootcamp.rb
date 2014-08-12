@@ -18,8 +18,6 @@ def main_menu
     puts "5: add a technology"
     puts "6: list technologies"
     puts "7: add a technology to bootcamp"
-    puts "8: list all bootcamps by technology"
-    puts "9: list all bootcamps by length"
     puts "10: exit"
     input = gets.chomp
     case input
@@ -108,6 +106,7 @@ def add_technology_to_bootcamp
   new_curriculum.save
   puts "New curriculum was added"
 end
+
 
 
 main_menu
