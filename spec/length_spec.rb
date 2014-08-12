@@ -21,4 +21,10 @@ describe 'Length' do
     expect(Length.all).to eq [test_length]
   end
 
+  it 'sets its ID when you save it' do
+    new_length = Length.new({length: 18, id: 1})
+    new_length.save
+    expect(new_length.id).to be_an_instance_of Fixnum
+  end
+
 end

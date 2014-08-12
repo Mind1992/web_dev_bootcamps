@@ -24,6 +24,10 @@ class Length
   end
 
   def ==(another_length)
-    self.length == another_length.length && self.id == another_length.id
+   self.id == another_length.id
+  end
+
+    def self.search_by_name(name)
+    Length.all.detect { |length| length.length == name }.id
   end
 end
