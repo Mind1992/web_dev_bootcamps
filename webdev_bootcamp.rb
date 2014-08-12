@@ -38,7 +38,7 @@ end
 def add_bootcamp
   print "Add bootcamps' name: "; bootcamp_name = gets.chomp
   print "Add bootcamps' length: "; bootcamp_length = gets.chomp
-  length_id = Length.search_by_name(bootcamp_length.to_i)
+  length_id = Length.search_by_name(bootcamp_length.to_i).id
   new_bootcamp = Bootcamp.new({name: bootcamp_name, length_id: length_id })
   new_bootcamp.save
   puts "New bootcamp #{new_bootcamp.name} was added"
@@ -49,6 +49,17 @@ def list_bootcamps
   Bootcamp.all.each do |bootcamp|
     puts bootcamp.name
   end
+end
+
+def update_bootcamp
+  list_bootcamps
+  puts "Which bootcamps' name you would like to change: "
+  old_name = gets.chomp
+  puts "Type in the new name: "
+  new_name = gets.chomp
+  bootcamp_object = Bootcamp.search_for_object(old_name)
+  bootcamp_object.update_name(new_name, old_name)
+  list_bootcamps
 end
 
 main_menu

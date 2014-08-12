@@ -33,6 +33,10 @@ class Bootcamp
     Bootcamp.all.detect { |bootcamp| bootcamp.name == name }.id
   end
 
+  def self.search_for_object(name)
+    Bootcamp.all.detect { |bootcamp| bootcamp.name == name }
+  end
+
   def update_name(new_name, old_name)
    found_id = Bootcamp.search_by_name(old_name)
    DB.exec("UPDATE bootcamps SET name = '#{new_name}' WHERE id = #{found_id};")
