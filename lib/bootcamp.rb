@@ -28,4 +28,8 @@ class Bootcamp
   def ==(another_bootcamp)
     self.name == another_bootcamp.name && self.id == another_bootcamp.id
   end
+
+  def self.search_by_name(name)
+    Bootcamp.all.detect { |bootcamp| bootcamp.name == name }.id
+  end
 end

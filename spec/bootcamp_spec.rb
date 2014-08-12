@@ -26,4 +26,18 @@ describe 'Bootcamp' do
     expect(new_bootcamp).to eq new_bootcamp2
   end
 
+  it 'sets its ID when you save it' do
+    new_bootcamp = Bootcamp.new({name: "Epicodus", length_id: 1})
+    new_bootcamp.save
+    expect(new_bootcamp.id).to be_an_instance_of Fixnum
+  end
+
+  it "lets you search by name and get the id" do
+    new_bootcamp = Bootcamp.new({name: "Epicodus",length_id: 1})
+    new_bootcamp_2 = Bootcamp.new({name: "Code Fellows",length_id: 2})
+    new_bootcamp.save
+    new_bootcamp_2.save
+    expect(Bootcamp.search_by_name('Epicodus')).to eq new_bootcamp.id
+  end
+
 end
