@@ -12,7 +12,7 @@ Clone this repository or download the .zip.
 * CREATE TABLE technologies (id serial PRIMARY KEY, name varchar);
 * CREATE TABLE curriculum (id serial PRIMARY KEY, bootcamp_id int, technology_id int);
 * CREATE DATABASE programming_bootcamps_test WITH TEMPLATE programming_bootcamps;
-##Author
+## Author
 Sergii Mertsalov
-##License
+## License
 MIT
