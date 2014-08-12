@@ -47,4 +47,13 @@ describe 'Bootcamp' do
     expect(Bootcamp.all.first.name).to eq "Code Fellows"
   end
 
+  it "lets you delete a bootcamp" do
+    new_bootcamp = Bootcamp.new({name: "Epicodus",length_id: 1})
+    new_bootcamp_2 = Bootcamp.new({name: "Code Fellows",length_id: 2})
+    new_bootcamp.save
+    new_bootcamp_2.save
+    new_bootcamp.delete_bootcamp("Epicodus")
+    expect(Bootcamp.all).to eq [new_bootcamp_2]
+  end
+
 end

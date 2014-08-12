@@ -38,4 +38,10 @@ class Bootcamp
    DB.exec("UPDATE bootcamps SET name = '#{new_name}' WHERE id = #{found_id};")
    self.name = new_name
   end
+
+   def delete_bootcamp(name)
+    bootcamp = Bootcamp.search_by_name(name)
+    DB.exec("DElETE FROM bootcamps WHERE id = #{bootcamp};")
+    Bootcamp.all.delete(Bootcamp.all.first)
+  end
 end
