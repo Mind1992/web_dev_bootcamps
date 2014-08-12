@@ -19,4 +19,13 @@ class Bootcamp
     end
     bootcamps
   end
+
+  def save
+    results = DB.exec("INSERT INTO bootcamps (name, length_id) VALUES ('#{@name}', #{@length_id}) RETURNING id;")
+    @id = results.first['id'].to_i
+  end
+
+  def ==(another_bootcamp)
+    self.name == another_bootcamp.name && self.id == another_bootcamp.id
+  end
 end
