@@ -62,4 +62,14 @@ def update_bootcamp
   list_bootcamps
 end
 
+def delete_bootcamp
+  list_bootcamps
+  puts "Which bootcamp would you like to delete: "
+  name = gets.chomp
+  bootcamp_object = Bootcamp.search_for_object(name)
+  bootcamp_object.delete_bootcamp(name)
+  list_bootcamps
+end
+
+
 main_menu
