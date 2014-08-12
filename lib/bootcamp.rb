@@ -48,4 +48,5 @@ class Bootcamp
     DB.exec("DElETE FROM bootcamps WHERE id = #{bootcamp};")
     Bootcamp.all.delete(Bootcamp.all.first)
   end
+
 end
