@@ -9,4 +9,8 @@ describe 'Bootcamp' do
 		new_bootcamp = Bootcamp.new({name: 'Epicodus', length_id: nil})
 		expect(new_bootcamp.name).to eq "Epicodus"
 	end
+
+	it 'starts with no bootcamps' do 
+		expect(Bootcamp.all).to eq []
+	end
 end
